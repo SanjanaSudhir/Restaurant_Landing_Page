@@ -52,56 +52,64 @@
       text-decoration: none;
     }
 
-    /* Hero section */
+    /* Hero Section */
     #hero {
-      position: relative;
       height: 100vh;
-      background: url('images/restaurant2.jpg') center center/cover no-repeat;
+      width: 100vw;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: none;
     }
-
-    .hero-overlay {
+    .hero-bg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('restaurant2.jpg') center center/cover no-repeat;
+      z-index: 1;
+    }
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      background: rgba(0,0,0,0.5);
+      padding: 2rem;
+      border-radius: 10px;
+      color: white;
+      max-width: 600px;
+      margin: auto;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
     }
-
     .hero-overlay h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
-      animation: fadeIn 1.2s ease forwards;
+      margin-bottom: 1rem;
+      z-index: 2;
     }
-
     .hero-overlay p {
+      margin: 1rem 0;
       font-size: 1.2rem;
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease forwards;
+      z-index: 2;
     }
-
     .hero-overlay .btn {
-      background: #ff6b35;
-      padding: 12px 24px;
+      background-color: #e67e22;
       color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
       text-decoration: none;
-      border-radius: 25px;
       font-weight: bold;
-      transition: background 0.3s ease;
-      animation: fadeIn 1.8s ease forwards;
+      margin-bottom: 1.5rem;
+      z-index: 2;
     }
-
     .hero-overlay .btn:hover {
-      background: #e85a2d;
+      background-color: #cf711f;
     }
 
+    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -157,6 +165,39 @@
       color: #e67e22;
     }
 
+    /* About Section */
+    #about {
+      padding: 4rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .about-inner img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 4rem 2rem;
+      background: #f8f8f8;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-grid i {
+      margin-right: 0.5rem;
+    }
+
     /* Footer */
     footer {
       background: #333;
@@ -190,9 +231,8 @@
     </nav>
     <a class="cta-button" href="#contact">Reserve Now</a>
   </header>
-
-  <!-- Hero Section -->
   <section id="hero">
+    <div class="hero-bg"></div>
     <div class="hero-overlay">
       <h1>Welcome to Taste Haven</h1>
       <p>Bold Flavors, Unforgettable Moments</p>
@@ -200,15 +240,20 @@
     </div>
   </section>
 
-  <!-- Menu Section -->
   <main>
     <section id="menu">
       <h2>Our Menu</h2>
       <div class="menu-grid">
 
-        <!-- Removed Bruschetta Card -->
-
         <!-- Starters -->
+        <div class="menu-card">
+          <img src="bruchetta.jpg .tiff" alt="Bruschetta" />
+          <div class="card-content">
+            <h4>Bruschetta</h4>
+            <p>Grilled ciabatta topped with fresh tomato & basil</p>
+            <span class="price">₹350</span>
+          </div>
+        </div>
         <div class="menu-card">
           <img src="soup.jpeg" alt="Minestrone Soup" />
           <div class="card-content">
@@ -254,7 +299,7 @@
 
         <!-- Desserts -->
         <div class="menu-card">
-          <img src="lava-cake.jpeg" alt="Chocolate Lava Cake" />
+          <img src="lava cake.jpeg" alt="Chocolate Lava Cake" />
           <div class="card-content">
             <h4>Chocolate Lava Cake</h4>
             <p>Warm, gooey indulgence with a molten center</p>
@@ -280,9 +325,27 @@
 
       </div>
     </section>
+
+    <section id="about">
+      <div class="about-inner">
+        <img src="LandingPage.jpeg" alt="Our Ambiance" />
+        <div class="about-text">
+          <h2>About Taste Haven</h2>
+          <p>We curate an experience where every dish tells a story—crafted with passion, fresh ingredients, and a hint of innovation. Whether you're here to relax or celebrate, you'll find a welcoming atmosphere and flavors that linger.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <div class="contact-grid">
+        <div><i class="fa-solid fa-location-dot"></i> 123 Food Street, Bengaluru</div>
+        <div><i class="fa-solid fa-phone"></i> +91 98765 43210</div>
+        <div><i class="fa-solid fa-clock"></i> Mon–Sun: 10 am – 11 pm</div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="socials">
       <a href="#"><i class="fab fa-facebook"></i></a>
@@ -295,6 +358,3 @@
     </form>
     <p>&copy; 2025 Taste Haven.</p>
   </footer>
-</body>
-</html>
-
