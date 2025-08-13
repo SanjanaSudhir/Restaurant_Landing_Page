@@ -52,44 +52,50 @@ header .cta-button {
   text-decoration: none;
 }
 
-/* Hero Section */
 #hero {
-  height: 100vh;
-  background: url("../restaurant2.jpg") no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  position: relative;
+  height: 100vh; /* Full screen height */
+  background: url('restaurant2.jpg') center center/cover no-repeat;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   color: white;
-  animation: fadeIn 1.5s ease-in-out;
+  padding: 20px;
 }
 
 .hero-overlay h1 {
   font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .hero-overlay p {
-  margin: 1rem 0;
   font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .hero-overlay .btn {
-  background-color: #e67e22;
+  background: #ff6b35;
+  padding: 12px 24px;
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 25px;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
 
 .hero-overlay .btn:hover {
-  background-color: #cf711f;
+  background: #e85a2d;
 }
 
 /* Fade-in animation */
@@ -217,13 +223,12 @@ footer {
   </header>
 <section id="hero">
   <div class="hero-overlay">
-    <!-- Move the image below the welcome text -->
     <h1>Welcome to Taste Haven</h1>
     <p>Bold Flavors, Unforgettable Moments</p>
     <a href="#menu" class="btn">Explore Our Menu</a>
-    <img src="restaurant2.jpg" alt="Restaurant Ambiance" class="hero-image" />
   </div>
 </section>
+
 
   <main>
     <section id="menu">
